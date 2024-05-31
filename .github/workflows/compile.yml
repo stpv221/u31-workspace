@@ -42,8 +42,6 @@ jobs:
       - name: Upload github-pages artifact
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
-      - name: Remove game music for offline version
-        run: rm --recursive desktopRuntime/resources/assets/minecraft/sounds/music/game
       - name: Compile offline assets
         run: bash CompileEPK.sh
       - name: Make offline download
